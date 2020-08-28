@@ -11,7 +11,7 @@ import Foundation
 import AVFoundation
 
 public enum LBXScanErrorType {
-    case success
+    case empty
     case error
 }
 
@@ -173,7 +173,7 @@ extension LBXScanViewController: UIImagePickerControllerDelegate, UINavigationCo
             handleCodeResult(arrayResult: arrayResult)
         } else {
             if let delegate = scanResultDelegate {
-                delegate.scanFinished(scanResult: nil, error: .error)
+                delegate.scanFinished(scanResult: nil, error: .empty)
             }
         }
     }
