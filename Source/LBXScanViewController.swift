@@ -128,7 +128,7 @@ open class LBXScanViewController: UIViewController {
             delegate.scanFinished(scanResult: result, error: nil)
         } else {
             let result = LBXScanResult(str: nil, img: nil, barCodeType: nil, corner: nil)
-            delegate.scanFinished(scanResult: result, error: newError(.unknown, message: "no scan result"))
+            delegate.scanFinished(scanResult: result, error: scanError(.unknown, message: "no scan result"))
         }
     }
     
@@ -167,7 +167,7 @@ extension LBXScanViewController: UIImagePickerControllerDelegate, UINavigationCo
             handleCodeResult(arrayResult: arrayResult)
         } else {
             if let delegate = scanResultDelegate {
-                delegate.scanFinished(scanResult: nil, error: newError(.empty, message: "no scan result"))
+                delegate.scanFinished(scanResult: nil, error: scanError(.empty, message: "no scan result"))
             }
         }
     }
