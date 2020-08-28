@@ -13,7 +13,7 @@ public enum LBXScanErrorCode: Int {
     case unknown
 }
 
-func newError(_ code: LBXScanErrorCode, message: String? = nil) -> NSError {
+func scanError(_ code: LBXScanErrorCode, message: String? = nil) -> NSError {
     
     let errorDomain = "com.litalk.messager.error"
     
