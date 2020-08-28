@@ -397,8 +397,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
-    func scanFinished(scanResult: LBXScanResult, error: String?) {
-        NSLog("scanResult:\(scanResult)")
+    func scanFinished(scanResult: LBXScanResult?, error: Error?) {
+        NSLog("scanResult:\(error?.localizedDescription)")
     }
-
 }
