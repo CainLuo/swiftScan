@@ -17,6 +17,7 @@
 		48B143C41C17C98B00B2E7D5 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B143C31C17C98B00B2E7D5 /* MainTableViewController.swift */; };
 		48B143CA1C1809E700B2E7D5 /* CodeScan.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 48B143C91C1809E700B2E7D5 /* CodeScan.bundle */; };
 		48D3BBD11C70104100823F87 /* LBXPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D3BBD01C70104100823F87 /* LBXPermissions.swift */; };
+		4D6796B624F8BDFB00BB95F3 /* LBXScanError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6796B524F8BDFB00BB95F3 /* LBXScanError.swift */; };
 		73FF0B8E1CF545FE0083F169 /* ScanResultController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73FF0B8A1CF545FE0083F169 /* ScanResultController.xib */; };
 		73FF0B8F1CF545FE0083F169 /* ScanResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FF0B8B1CF545FE0083F169 /* ScanResultController.swift */; };
 		73FF0B901CF545FE0083F169 /* MyCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FF0B8C1CF545FE0083F169 /* MyCodeViewController.swift */; };
@@ -53,6 +54,7 @@
 		48B143C31C17C98B00B2E7D5 /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		48B143C91C1809E700B2E7D5 /* CodeScan.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CodeScan.bundle; sourceTree = "<group>"; };
 		48D3BBD01C70104100823F87 /* LBXPermissions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXPermissions.swift; sourceTree = "<group>"; };
+		4D6796B524F8BDFB00BB95F3 /* LBXScanError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBXScanError.swift; sourceTree = "<group>"; };
 		73FF0B8A1CF545FE0083F169 /* ScanResultController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScanResultController.xib; sourceTree = "<group>"; };
 		73FF0B8B1CF545FE0083F169 /* ScanResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanResultController.swift; sourceTree = "<group>"; };
 		73FF0B8C1CF545FE0083F169 /* MyCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCodeViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				488928E01C1A7BE4005A8F83 /* LBXScanViewController.swift */,
 				488928E11C1A7BE4005A8F83 /* LBXScanViewStyle.swift */,
 				488928E21C1A7BE4005A8F83 /* LBXScanWrapper.swift */,
+				4D6796B524F8BDFB00BB95F3 /* LBXScanError.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 			files = (
 				488928E61C1A7BE4005A8F83 /* LBXScanViewController.swift in Sources */,
 				73FF0B911CF545FE0083F169 /* QQScanViewController.swift in Sources */,
+				4D6796B624F8BDFB00BB95F3 /* LBXScanError.swift in Sources */,
 				48B143C41C17C98B00B2E7D5 /* MainTableViewController.swift in Sources */,
 				7D42B9B21C05EE9A0084D045 /* ViewController.swift in Sources */,
 				488928E51C1A7BE4005A8F83 /* LBXScanView.swift in Sources */,
