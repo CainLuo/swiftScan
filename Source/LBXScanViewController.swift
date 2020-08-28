@@ -10,8 +10,14 @@ import UIKit
 import Foundation
 import AVFoundation
 
+public enum LBXScanErrorType {
+    case success
+    case error
+}
+
 public protocol LBXScanViewControllerDelegate: class {
-     func scanFinished(scanResult: LBXScanResult, error: String?)
+    func scanFinished(scanResult: LBXScanResult, error: String?)
+    func scanFinished(scanResult: LBXScanResult?, error: LBXScanErrorType)
 }
 
 public protocol QRRectDelegate {
@@ -165,6 +171,10 @@ extension LBXScanViewController: UIImagePickerControllerDelegate, UINavigationCo
         let arrayResult = LBXScanWrapper.recognizeQRImage(image: image)
         if !arrayResult.isEmpty {
             handleCodeResult(arrayResult: arrayResult)
+        } else {
+            if let delegate = scanResultDelegate {
+                delegate.scanFinished(scanResult: nil, error: .error)
+            }
         }
     }
     
