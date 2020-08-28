@@ -11,6 +11,7 @@ import Foundation
 import AVFoundation
 
 public enum LBXScanErrorType {
+    case success
     case empty
     case error
 }
