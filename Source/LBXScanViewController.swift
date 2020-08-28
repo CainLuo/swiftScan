@@ -10,15 +10,8 @@ import UIKit
 import Foundation
 import AVFoundation
 
-public enum LBXScanErrorType {
-    case success
-    case empty
-    case error
-}
-
 public protocol LBXScanViewControllerDelegate: class {
-    func scanFinished(scanResult: LBXScanResult, error: String?)
-    func scanFinished(scanResult: LBXScanResult?, error: LBXScanErrorType)
+    func scanFinished(scanResult: LBXScanResult?, error: Error?)
 }
 
 public protocol QRRectDelegate {
@@ -135,7 +128,7 @@ open class LBXScanViewController: UIViewController {
             delegate.scanFinished(scanResult: result, error: nil)
         } else {
             let result = LBXScanResult(str: nil, img: nil, barCodeType: nil, corner: nil)
-            delegate.scanFinished(scanResult: result, error: "no scan result")
+            delegate.scanFinished(scanResult: result, error: newError(.unknown, message: "no scan result"))
         }
     }
     
@@ -174,7 +167,7 @@ extension LBXScanViewController: UIImagePickerControllerDelegate, UINavigationCo
             handleCodeResult(arrayResult: arrayResult)
         } else {
             if let delegate = scanResultDelegate {
-                delegate.scanFinished(scanResult: nil, error: .empty)
+                delegate.scanFinished(scanResult: nil, error: newError(.empty, message: "no scan result"))
             }
         }
     }
