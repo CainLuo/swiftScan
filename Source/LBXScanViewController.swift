@@ -154,20 +154,20 @@ extension LBXScanViewController: UIImagePickerControllerDelegate, UINavigationCo
     
     //MARK: -----相册选择图片识别二维码 （条形码没有找到系统方法）
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-        picker.dismiss(animated: true, completion: nil)
-        
-        let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
-        let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-        guard let image = editedImage ?? originalImage else {
-            showMsg(title: nil, message: NSLocalizedString("Identify failed", comment: "Identify failed"))
-            return
-        }
-        let arrayResult = LBXScanWrapper.recognizeQRImage(image: image)
-        if !arrayResult.isEmpty {
-            handleCodeResult(arrayResult: arrayResult)
-        } else {
-            if let delegate = scanResultDelegate {
-                delegate.scanFinished(scanResult: nil, error: scanError(.empty, message: "no scan result"))
+        picker.dismiss(animated: true) { [weak self] in
+            let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
+            let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+            guard let image = editedImage ?? originalImage else {
+                self?.showMsg(title: nil, message: NSLocalizedString("Identify failed", comment: "Identify failed"))
+                return
+            }
+            let arrayResult = LBXScanWrapper.recognizeQRImage(image: image)
+            if !arrayResult.isEmpty {
+                self?.handleCodeResult(arrayResult: arrayResult)
+            } else {
+                if let delegate = self?.scanResultDelegate {
+                    delegate.scanFinished(scanResult: nil, error: scanError(.empty, message: "no scan result"))
+                }
             }
         }
     }
