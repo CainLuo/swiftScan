@@ -168,7 +168,7 @@ open class LBXScanWrapper: NSObject,AVCaptureMetadataOutputObjectsDelegate {
 
         arrayResult.removeAll()
 
-        #if！targetEnvironment（simulator）
+//        #if！targetEnvironment（simulator）
         // 识别扫码类型
         for current in metadataObjects {
             guard let code = current as? AVMetadataMachineReadableCodeObject else {
@@ -179,7 +179,7 @@ open class LBXScanWrapper: NSObject,AVCaptureMetadataOutputObjectsDelegate {
                                              barCodeType: code.type.rawValue,
                                              corner: code.corners as [AnyObject]?))
         }
-        #endif
+//        #endif
 
         if arrayResult.isEmpty {
             isNeedScanResult = true
